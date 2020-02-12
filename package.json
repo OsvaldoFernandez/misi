@@ -1,0 +1,27 @@
+{
+  "name": "misi",
+  "version": "1.0.0",
+  "description": " Sistemas inteligentes (AGI) para la construcción y mejora de GUIs.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OsvaldoFernandez/misi.git"
+  },
+  "keywords": [
+    "IGA",
+    "GUI",
+    "UX"
+  ],
+  "author": "Osvaldo Fernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OsvaldoFernandez/misi/issues"
+  },
+  "homepage": "https://github.com/OsvaldoFernandez/misi#readme",
+  "dependencies": {
+    "http-server": "^0.12.1"
+  }
+}
