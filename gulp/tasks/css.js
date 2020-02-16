@@ -4,7 +4,7 @@ import del from 'del';
 
 
 const localConfig = {
-  src: './landing/*.scss',
+  src: './landing/*.css',
   dest: './build/css/',
   cleanSrc: ['./build/css/*.css'],
 };

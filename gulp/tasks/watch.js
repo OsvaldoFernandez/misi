@@ -13,13 +13,13 @@ gulp.task('watch:scss', () => {
 
 gulp.task('watch:js', () => {
   gulp.watch(localConfig.jsWatchedFiles, () => {
-    runSequence('scripts', 'inject');
+    runSequence('scripts');
   });
 });
 
 gulp.task('watch:pug', () => {
   gulp.watch(localConfig.pugWatchedFiles, () => {
-    runSequence('html', 'inject');
+    runSequence('html');
   });
 });
 
