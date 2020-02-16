@@ -1,4 +1,4 @@
-// BACKEND
+// ===== THIS WILL BE TAKEN FROM A BACKEND SERVICE  =====
 
 // ORIGINAL CHROMOSOME
 const elements = [
@@ -72,6 +72,8 @@ const getChromosome = (trackingID) => {
   }
   return chromosomeDB[trackingID];
 }
+
+// =====  END BACKEND  =====
 
 const swapDivs = (selector1, selector2, index, j) => {
    // Swapping divs

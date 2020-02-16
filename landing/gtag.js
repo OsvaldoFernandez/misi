@@ -8,8 +8,8 @@ const setCookie = (c_name, value) => {
 
 window.trackingID = getCookie('tracking_id')
 
-if (!window.trackingID) {
-  const array = ['UA-158607365-1','UA-158607365-2']; // Get from backend
+if (!window.trackingID) { // All this random assignment will be taken from backend service.
+  const array = ['UA-158607365-1','UA-158607365-2'];
   window.trackingID = array[Math.floor(Math.random() * array.length)];
   setCookie('tracking_id', window.trackingID);
 }

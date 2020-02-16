@@ -1,3 +1,5 @@
+// ===== THIS WILL BE TAKEN FROM A BACKEND SERVICE USING GENETIC ALGORITHM  =====
+
 // TODO: Get eq prob shuffle.
 const shuffle = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
