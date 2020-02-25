@@ -1,10 +1,11 @@
 import gulp from 'gulp';
 import cached from 'gulp-cached';
 import gulpif from 'gulp-if';
+import { proj } from '../config';
 
 const localConfig = {
   src () {
-    return ['./landing/*.js'];
+    return [`./${proj}/*.js`];
   },
   dest () {
     return './build/js/';

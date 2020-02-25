@@ -1,10 +1,11 @@
 import gulp from 'gulp';
 import gulpif from 'gulp-if';
 import del from 'del';
+import { proj } from '../config';
 
 
 const localConfig = {
-  src: './landing/*.css',
+  src: `./${proj}/*.css`,
   dest: './build/css/',
   cleanSrc: ['./build/css/*.css'],
 };
