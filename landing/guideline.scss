@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$red: #ED5565;
+$grey: #A9A9A9;
+$blue: #226EE8;
+$black: #000;
+$green: #09CA87;
+$white: #FFF;
+
+h1 {
+  font-family: 'Roboto';
+  font-size: 21px;
+  font-weight: 300;
+  color: white;
+}
+
+h2 {
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+}
+
+h3 {
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 400;
+  color: $grey;
+
+  &.green {
+    color: $green;
+  }
+
+  &.blue {
+    color: $blue;
+  }
+
+  &.red {
+    color: $red;
+  }
+
+  &.white {
+    color: $white;
+    // WHAT ABOUT BACKGROUND?
+  }
+}
+
+p {
+  font-family: roboto;
+  font-size: 13px;
+  font-weight: 400;
+  color: $grey;
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.bold {
+    font-weight: 700;
+  }
+
+  &.green {
+    color: $green;
+  }
+
+  &.blue {
+    color: $blue;
+  }
+
+  &.red {
+    color: $red;
+  }
+}
+
+button {
+  background: $green;
+  color: $white;
+
+  &.secondary {
+    background: $white;
+    color: $green;
+  }
+
+  &:disabled {
+    background: $grey;
+    color: $white;
+  }
+}

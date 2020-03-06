@@ -5,6 +5,6 @@ import { getConfigKeys } from '../config';
 const config = getConfigKeys();
 
 gulp.task('build', (cb) => {
-  const defaultBuildTasks = ['html', 'css', 'scripts', cb];
+  const defaultBuildTasks = ['html', 'css', 'sass', 'scripts', cb];
   runSequence(...defaultBuildTasks);
 });

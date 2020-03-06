@@ -1,14 +1,20 @@
 import gulp from 'gulp';
 import runSequence from 'run-sequence';
+import { proj } from '../config';
 
 const localConfig = {
-  scssWatchedFiles: 'landing/*.css',
-  jsWatchedFiles: 'landing/*.js',
-  pugWatchedFiles: 'landing/*.html'
+  cssWatchedFiles: `${proj}/*.css`,
+  scssWatchedFiles: `${proj}/*.scss`,
+  jsWatchedFiles: `${proj}/*.js`,
+  pugWatchedFiles: `${proj}/*.html`
 };
 
+gulp.task('watch:css', () => {
+  gulp.watch(localConfig.cssWatchedFiles, ['css']);
+});
+
 gulp.task('watch:scss', () => {
-  gulp.watch(localConfig.scssWatchedFiles, ['css']);
+  gulp.watch(localConfig.scssWatchedFiles, ['sass']);
 });
 
 gulp.task('watch:js', () => {
@@ -23,4 +29,4 @@ gulp.task('watch:pug', () => {
   });
 });
 
-gulp.task('watch', ['watch:pug', 'watch:js', 'watch:scss']);
+gulp.task('watch', ['watch:pug', 'watch:js', 'watch:css', 'watch:scss']);
