@@ -1,31 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap');
 
-$red: #ED5565;
 $grey: #A9A9A9;
-$blue: #00254C;
-$black: #000;
-$green: #09CA87;
-$white: #FFF;
 
-$background-1: $blue;
-$background-2: #98CF04;
+$background-1: #00254c;
+$background-2: #0091ff;
+$background-3: #FFF;
 
-$foreground-1: #98CF04;
-$foreground-2: $white;
-$foreground-3: $blue;
+$foreground-1: #00254c;
+$foreground-2: #0091ff;
+$foreground-3: #FFF;
 
 h1 {
   font-family: 'Poppins', 'sans-serif';
   font-size: 48px;
   font-weight: 600;
-  color: $foreground-3;
+  color: $foreground-1;
 }
 
 h2 {
   font-family: 'Poppins', 'sans-serif';
   font-size: 48px;
   font-weight: 300;
-  color: $foreground-3;
+  color: $foreground-1;
 }
 
 h3 {
@@ -34,21 +30,12 @@ h3 {
   font-weight: 400;
   color: $grey;
 
-  &.green {
-    color: $green;
-  }
-
   &.blue {
-    color: $blue;
-  }
-
-  &.red {
-    color: $red;
+    color: $foreground-1;
   }
 
   &.white {
-    color: $white;
-    // WHAT ABOUT BACKGROUND?
+    color: $foreground-3;
   }
 }
 
@@ -56,16 +43,16 @@ p {
   font-family: 'Poppins', 'sans-serif';
   font-size: 15px;
   font-weight: 400;
-  color: $blue;
+  color: $foreground-1;
 
   &.secondary {
-    color: $white;
+    color: $foreground-3;
   }
 }
 
 button {
   background: $background-2;
-  color: $foreground-2;
+  color: $foreground-3;
   font-family: 'Poppins', 'sans-serif';
   font-size: 15px;
   font-weight: 400;
@@ -75,12 +62,12 @@ button {
 
   &.secondary {
     background: $background-1;
-    color: $foreground-2;
+    color: $foreground-3;
     border-radius: 0;
   }
 
   &:disabled {
     background: $grey;
-    color: $white;
+    color: $foreground-3;
   }
 }

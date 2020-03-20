@@ -1,33 +1,44 @@
 // PALLETE GENERATOR
 
-$.get('URL').then((data) => {
-  var resp = $( '<div></div>' );
+const url = (color) => {
+  return `https://cors-anywhere.herokuapp.com/https://mycolor.space/?hex=%23${color}&sub=1`;
+};
+
+const parsePalettes = (data) => {
+  const resp = $( '<div></div>' );
   resp.html(data);
+  return resp.children('.palettes').children('.wrapper').children('.color-palette');
+};
 
-  const list = document.createElement('ul')
-  const palettes = resp.children('.palettes').children('.wrapper').children('.color-palette');
-  debugger;
-
-  palettes.each(function () {
-
-
-    const node = document.createElement("li");
-    list.appendChild(node);
-    const textnode = document.createTextNode("New pallete");
-    const colorsnode = document.createElement('ul')
-    node.appendChild(textnode);
-    node.appendChild(colorsnode);
-
-    const colorboxes = $(this).children('.color-palette-inner').children('.color-box');
-    colorboxes.each(function () {
-      const colornode = document.createElement("li");
-      const colortextnode = document.createTextNode($(this).find('input')[0].value);
-      colornode.appendChild(colortextnode);
-      colorsnode.appendChild(colornode);
-    })
+const parsePalette = (data) => {
+  const palette = [];
+  const colorboxes = $(data).children('.color-palette-inner').children('.color-box');
+  colorboxes.each(function () {
+    const colortext = $(this).find('input')[0].value;
+    palette.push(colortext);
   });
+  return palette;
+}
 
-  document.body.appendChild(list);
-}).catch((err) => {
-  console.log('error');
-});
+const fetchPalletes = (baseColors, result, successCb, errorCb) => {
+  const baseColor = baseColors.shift();
+  if(baseColor) {
+    $.get(url(baseColor)).then((data) => {
+      const palettes = parsePalettes(data);
+      palettes.each(function () {
+        result.push(parsePalette(this));
+      });
+      fetchPalletes(baseColors, result, successCb, errorCb);
+    }).catch((err) => {
+      errorCb(err);
+    });
+  } else {
+    successCb(result);
+  }
+}
+
+const getPalettes = (baseColors) => {
+  return new Promise((resolve, reject) => {
+    fetchPalletes(baseColors, [], resolve, reject)
+  });
+}
