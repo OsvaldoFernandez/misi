@@ -44,6 +44,7 @@ function hexToHSL(H) {
 }
 
 function distanceHSL(color1, color2) {
+  // Return HSL to hex distance between two colors
   const hsl1 = hexToHSL(color1);
   const hsl2 = hexToHSL(color2);
 
@@ -60,19 +61,17 @@ function distance(color1, color2) {
   return (hsl.h + hsl.s + hsl.l);
 };
 
-const color1 = '#00254C';
-const color2 = '#98CF04';
-
-const landingColors = [color1, color2];
-const unsignedLandingColors = landingColors.map((color) => color.substring(1));
+const unsignedLandingColors = () => landingColors().map((color) => color.substring(1));
 
 const getNearestInPalette = (palette) => {
+  // Given a palette and N landing colors, return the N palette colors closer to landing colors
   const paletteColors = {
     colors: [],
-    totalDistance: 0
+    totalDistance: 0,
+    baseColor: palette[0]
   };
 
-  landingColors.forEach((lColor) => {
+  landingColors().forEach((lColor) => {
     const distancedColors = palette.map((pColor) => {
       return {pColor, distance: distance(pColor, lColor)}
     });
@@ -85,14 +84,19 @@ const getNearestInPalette = (palette) => {
   return paletteColors;
 }
 
-
-getPalettes(unsignedLandingColors).then((palettes) => {
-  const palettesColors = [];
-
-  palettes.forEach((palette) => {
-    palettesColors.push(getNearestInPalette(palette))
+const savePalettes = (palettes) => {
+  $.post('http://localhost:3001/palettes/bulk_create', { palettes: JSON.stringify(results) }).then((data) => {
+    console.log(data);
+  }).catch((err) => {
+    debugger;
+    console.log(err);
   });
+};
 
-  const orderedPalettesColors = _.sortBy(palettesColors, ['totalDistance']);
-  console.log(JSON.stringify(orderedPalettesColors));
+$(() => {
+  $("#createPalettes")[0].addEventListener("click", () => {
+    getPalettes(unsignedLandingColors()).then((palettes) => {
+      savePalettes(palettes.map((palette) => getNearestInPalette(palette)));
+    });
+  });
 });

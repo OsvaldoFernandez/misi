@@ -31,7 +31,6 @@ export function getConfigKeys () {
 }
 
 export function getSecretKeys () {
-  const keys = readKeys(`../config/secrets.${env}`);
-  keys.environment = env;
+  const keys = readKeys(`../config/secrets`);
   return keys;
 }

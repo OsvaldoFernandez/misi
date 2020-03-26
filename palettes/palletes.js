@@ -1,8 +1,6 @@
 // PALLETE GENERATOR
 
-const url = (color) => {
-  return `https://cors-anywhere.herokuapp.com/https://mycolor.space/?hex=%23${color}&sub=1`;
-};
+const url = (color) => `${"/* @echo PALETTES_URL */"}?hex=%23${color}&sub=1`;
 
 const parsePalettes = (data) => {
   const resp = $( '<div></div>' );
@@ -42,3 +40,12 @@ const getPalettes = (baseColors) => {
     fetchPalletes(baseColors, [], resolve, reject)
   });
 }
+
+const landingColors = () => $('.colorInput').toArray().map((input) => input.value);
+
+$(() => {
+  $("#addColor")[0].addEventListener("click", () => {
+    $('.inputs').append('<br>');
+    $('.inputs').append('<input type="text" class="colorInput"></input>');
+  });
+});

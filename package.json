@@ -46,5 +46,8 @@
     "run-sequence": "^2.2.1",
     "webpack": "^4.41.0",
     "yargs": "^6.6.0"
+  },
+  "devDependencies": {
+    "gulp-preprocess": "^3.0.3"
   }
 }
