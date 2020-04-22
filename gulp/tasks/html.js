@@ -2,10 +2,9 @@ import gulp from 'gulp';
 import del from 'del';
 import { errorHandler, getSecretKeys } from '../config';
 import preprocess from 'gulp-preprocess';
-import { proj } from '../config';
 
 const localConfig = {
-  src: `./${proj}/*.html`,
+  src: `./src/*.html`,
   dest: './build',
   cleanSrc: './build/*.html'
 };

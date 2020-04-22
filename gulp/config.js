@@ -2,7 +2,6 @@ import notifier from 'node-notifier';
 import { argv } from 'yargs';
 
 export const env = argv.env || 'development';
-export const proj = argv.proj || 'landing';
 
 export function errorHandler (error) {
   notifier.notify({

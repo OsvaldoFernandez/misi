@@ -2,11 +2,11 @@ import gulp from 'gulp';
 import cached from 'gulp-cached';
 import gulpif from 'gulp-if';
 import preprocess from 'gulp-preprocess';
-import { proj, getSecretKeys } from '../config';
+import { getSecretKeys } from '../config';
 
 const localConfig = {
   src () {
-    return [`./${proj}/*.js`];
+    return [`./src/*.js`, './vendor/*.js'];
   },
   dest () {
     return './build/js/';

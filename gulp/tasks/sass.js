@@ -1,10 +1,9 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
 import del from 'del';
-import { proj } from '../config';
 
 const localConfig = {
-  src: `./${proj}/*.scss`,
+  src: `./src/*.scss`,
   dest: './build/css/'
 };
 
