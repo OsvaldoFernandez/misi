@@ -9,13 +9,12 @@ const getChromosome = () => {
   if (this.trackingId) {
     $.get(`${"/* @echo API_URL */"}chromosomes/${this.trackingId}`).then((data) => {
       applyChromosome(data);
-
     });
   } else {
     // TODO: SPECIFY PROJECT ID IN CHROMOSOME REQUEST.
-    $.get(`${"/* @echo API_URL */"}chromosomes/request`).then((data) => {
-      setCookie('tracking_id', this.chromosome.trackingId);
-      window.trackingID = this.chromosome.trackingID;
+    $.get(`${"/* @echo API_URL */"}chromosomes/request?project_id=${"/* @echo PROJECT_ID */"}`).then((data) => {
+      setCookie('tracking_id', JSON.parse(data).trackingId);
+      window.trackingID = JSON.parse(data).trackingId;
       setTag();
       applyChromosome(data);
     });
