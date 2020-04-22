@@ -1,10 +1,10 @@
 import gulp from 'gulp';
 import del from 'del';
 import { errorHandler, getSecretKeys } from '../config';
-import { proj } from '../config';
+import preprocess from 'gulp-preprocess';
 
 const localConfig = {
-  src: `./${proj}/*.html`,
+  src: `./src/*.html`,
   dest: './build',
   cleanSrc: './build/*.html'
 };
@@ -15,5 +15,6 @@ gulp.task('clean:html', () => {
 
 gulp.task('html', ['clean:html'], () => {
   return gulp.src(localConfig.src)
+  .pipe(preprocess({ context: getSecretKeys() }))
   .pipe(gulp.dest(localConfig.dest));
 });

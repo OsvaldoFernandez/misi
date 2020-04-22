@@ -1,11 +1,12 @@
 import gulp from 'gulp';
 import cached from 'gulp-cached';
 import gulpif from 'gulp-if';
-import { proj } from '../config';
+import preprocess from 'gulp-preprocess';
+import { getSecretKeys } from '../config';
 
 const localConfig = {
   src () {
-    return [`./${proj}/*.js`];
+    return [`./src/*.js`, './vendor/*.js'];
   },
   dest () {
     return './build/js/';
@@ -16,5 +17,6 @@ const localConfig = {
 gulp.task('scripts', () => {
   return gulp.src(localConfig.src())
     .pipe(cached('scripts'))
+    .pipe(preprocess({ context: getSecretKeys() }))
     .pipe(gulp.dest(localConfig.dest()));
 });

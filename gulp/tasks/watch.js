@@ -1,12 +1,11 @@
 import gulp from 'gulp';
 import runSequence from 'run-sequence';
-import { proj } from '../config';
 
 const localConfig = {
-  cssWatchedFiles: `${proj}/*.css`,
-  scssWatchedFiles: `${proj}/*.scss`,
-  jsWatchedFiles: `${proj}/*.js`,
-  pugWatchedFiles: `${proj}/*.html`
+  cssWatchedFiles: 'src/*.css',
+  scssWatchedFiles: 'src/*.scss',
+  jsWatchedFiles: '$src/*.js',
+  pugWatchedFiles: '$src/*.html'
 };
 
 gulp.task('watch:css', () => {
