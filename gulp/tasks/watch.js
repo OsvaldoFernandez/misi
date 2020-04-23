@@ -4,8 +4,8 @@ import runSequence from 'run-sequence';
 const localConfig = {
   cssWatchedFiles: 'src/*.css',
   scssWatchedFiles: 'src/*.scss',
-  jsWatchedFiles: '$src/*.js',
-  pugWatchedFiles: '$src/*.html'
+  jsWatchedFiles: 'src/*.js',
+  pugWatchedFiles: 'src/*.html'
 };
 
 gulp.task('watch:css', () => {

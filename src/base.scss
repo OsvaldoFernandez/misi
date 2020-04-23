@@ -135,6 +135,10 @@ body {
     height: 40px;
     width: 40px;
   }
+
+  img + img {
+    margin-left: 10px;
+  }
 }
 
 .custom-icon {
@@ -201,6 +205,8 @@ body {
 @media screen and (max-width: 1000px) {
   .navbar {
     .navbar-brand {
+      margin-left: 15px;
+
       .logo {
         height: 100px;
         width: 100px;
@@ -210,6 +216,25 @@ body {
       a > p {
         text-align: center;
       }
+    }
+  }
+
+  .section2 {
+    padding: 10px;
+    text-align: center;
+
+    .contact-item {
+      text-align: center;
+    }
+  }
+
+  .billboard {
+    font-size: 15vw;
+    line-height: 15vw;
+
+    &.big {
+      font-size: 20vw;
+      line-height: 20vw;
     }
   }
 }
