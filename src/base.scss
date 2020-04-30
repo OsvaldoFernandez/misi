@@ -136,7 +136,7 @@ body {
     width: 40px;
   }
 
-  img + img {
+  a + a {
     margin-left: 10px;
   }
 }
@@ -199,6 +199,21 @@ body {
 .plagues {
   img {
     width: 100%;
+  }
+}
+
+.chat-whatsapp {
+  height: 70px;
+  width: 70px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  img {
+    height: inherit;
+    width: inherit;
   }
 }
 
