@@ -25,11 +25,11 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav uppercase">
           <li class="nav-item nav-link option1 active"><a href="#"><p class="secondary">Home</p></a></li>
-          <li class="nav-item nav-link option2"><a href="#"><p class="secondary">Servicios</p></a></li>
-          <li class="nav-item nav-link option3"><a href="#"><p class="secondary">Quiénes somos</p></a></li>
-          <li class="nav-item nav-link option4"><a href="#"><p class="secondary">Clientes</p></a></li>
-          <li class="nav-item nav-link option5"><a href="#"><p class="secondary">Habilitación</p></a></li>
-          <li class="nav-item nav-link option6"><a href="#"><p class="secondary">Contacto</p></a></li>
+          <li class="nav-item nav-link option2"><a href="http://www.saneamientoguemes.com.ar/index.php/servicios"><p class="secondary">Servicios</p></a></li>
+          <li class="nav-item nav-link option3"><a href="http://www.saneamientoguemes.com.ar/index.php/quienes-somos"><p class="secondary">Quiénes somos</p></a></li>
+          <li class="nav-item nav-link option4"><a href="http://www.saneamientoguemes.com.ar/index.php/clientes"><p class="secondary">Clientes</p></a></li>
+          <li class="nav-item nav-link option5"><a href="http://www.saneamientoguemes.com.ar/index.php/servicios"><p class="secondary">Habilitación</p></a></li>
+          <li class="nav-item nav-link option6"><a href="http://www.saneamientoguemes.com.ar/index.php/contacto#"><p class="secondary">Contacto</p></a></li>
         </ul>
       </div>
     </nav>
@@ -128,14 +128,14 @@
           </div>
         </div>
       </div>
-      <button type="button" name="button" class="mb-3">
+      <button type="button" name="button" onclick="window.location.href='/#contactSection'" class="mb-3">
         Pedí tu presupuesto
       </button>
       <div class="plagues mt-5 mb-5">
         <img src="assets/banner-plagas.png" alt="plagues">
       </div>
     </div>
-    <div class="section section2">
+    <div class="section section2" id="contactSection">
       <div class="container">
         <div class="row">
           <div class="col-md-6 contact-col-1">
@@ -150,7 +150,7 @@
                 <br>
                 <textarea class="form-control" name="name" rows="8" cols="80" placeholder="Mensaje"></textarea>
                 <br>
-                <button type="button" name="button" class="secondary pl-5 pr-5">Enviar</button>
+                <button onclick="window.convert()" type="button" name="button" class="secondary pl-5 pr-5">Enviar</button>
               </form>
             </div>
           </div>
@@ -172,7 +172,7 @@
                 </div>
                 <div class="col-md-10">
                   <p class="mb-1">Email</p>
-                  <p class="grey">info@saneamientoguemes.com.ar</p>
+                  <p class="grey"><a href="mailto:info@saneamientoguemes.com.ar">info@saneamientoguemes.com.ar</a></p>
                 </div>
               </div>
               <div class="contact-item row mb-3">
@@ -187,17 +187,16 @@
               </div>
               <div class="contact-item row mt-5">
                 <div class="col-md-6 justify-content-between social ml-5 mr-5">
-                  <img src="assets/facebook.svg" alt="">
-                  <img src="assets/instagram.svg" alt="">
+                  <a href="https://www.facebook.com/Saneamiento-Guemes-107983740669575/" onclick="window.convert()"><img src="assets/facebook.svg" alt=""></a>
+                  <a href="https://www.instagram.com/saneamiento_guemes/?hl=es-la" onclick="window.convert()"><img src="assets/instagram.svg" alt=""></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-
     </div>
+    <a class="chat-whatsapp" onclick="window.convert()" target="_blank" href="https://api.whatsapp.com/send?phone=5491132479096"><img src="assets/whatsapp.png"></button>
     <script type="text/javascript" src="js/formatter.js"></script>
   </body>
 </html>

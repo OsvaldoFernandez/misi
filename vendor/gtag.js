@@ -18,9 +18,15 @@ const setTag = () => {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', window.trackingID);
+  window.gtag = gtag;
 };
 
 
 if (window.trackingID) {
   setTag();
 };
+
+window.convert = () => {
+  gtag('event', 'click', {'event_category': 'links',
+  'event_label': 'social'});
+}
