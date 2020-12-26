@@ -172,17 +172,26 @@ body {
   margin-bottom: 20px;
 }
 
-.section2 {
-  text-align: left;
-}
 
-.section1 {
+
+.section2 {
   h1 {
     margin: 60px 0 40px;
   }
 }
 
-.section2 {
+.section3 {
+  background-color: $background-2;
+  color: white;
+}
+
+.section4 {
+  background-color: #8AB4F8;
+  padding: 180px 0;
+}
+
+.section5 {
+  text-align: left;
   padding: 0 100px;
 }
 
@@ -234,7 +243,7 @@ body {
     }
   }
 
-  .section2 {
+  .section5 {
     padding: 10px;
     text-align: center;
 
